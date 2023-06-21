@@ -1,4 +1,4 @@
-INSERT INTO items (code, name)
+INSERT IGNORE INTO items (code, name)
 VALUES
 ('001', 'Item 1'),
 ('002', 'Item 2'),
