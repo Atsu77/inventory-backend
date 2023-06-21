@@ -8,4 +8,6 @@ public interface ItemService {
     List<Item> findAll();
 
     Item insert(Item item);
+
+    Item findByCode(String code);
 }
