@@ -20,4 +20,9 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> findAll() {
         return itemMapper.findAll();
     }
+    @Override
+    public Item insert(Item item) {
+        itemMapper.insert(item);
+        return item;
+    }
 }

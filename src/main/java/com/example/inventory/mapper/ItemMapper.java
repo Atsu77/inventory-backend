@@ -11,4 +11,7 @@ import java.util.List;
 public interface ItemMapper {
   @Select("SELECT * FROM items")
   List<Item> findAll();
+
+  @Insert("INSERT INTO items (code, name) VALUES (#{code}, #{name})")
+  void insert(Item item);
 }

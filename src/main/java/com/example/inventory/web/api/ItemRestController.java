@@ -20,6 +20,14 @@ public class ItemRestController {
     @GetMapping
     public List<Item> findAll() {
         return itemService.findAll();
+    @PostMapping
+    public ResponseEntity<Item> create(@RequestBody Item item) {
+        if(isDuplicate(item)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
+        itemService.insert(item);
+        return ResponseEntity.status(HttpStatus.CREATED).body(item);
+    }
     }
 
 }
