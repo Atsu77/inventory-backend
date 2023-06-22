@@ -24,4 +24,12 @@ public class InventoryServiceImpl implements InventoryService {
     List<InventoryResponse> inventories = inventoryMapper.findAll();
     return inventories;
   }
+
+  @Override
+  public InventoryResponse findByItemCode(String itemCode) {
+    InventoryResponse inventory = inventoryMapper.findByItemCode(itemCode);
+    return inventory;
+  }
+
+
 }
