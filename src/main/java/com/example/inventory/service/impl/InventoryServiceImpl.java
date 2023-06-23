@@ -1,34 +1,31 @@
 package com.example.inventory.service.impl;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.inventory.mapper.InventoryMapper;
+import com.example.inventory.mapper.InventoryTransactionMapper;
 import com.example.inventory.service.InventoryService;
 import com.example.inventory.web.api.response.InventoryResponse;
 
 @Service
-public class InventoryServiceImpl implements InventoryService {
-  private final InventoryMapper inventoryMapper;
+public class InventoryTransactionServiceImpl implements InventoryService {
+  private final InventoryTransactionMapper inventoryMapper;
 
-  public InventoryServiceImpl(InventoryMapper inventoryMapper) {
+  public InventoryTransactionServiceImpl(InventoryTransactionMapper inventoryMapper) {
     this.inventoryMapper = inventoryMapper;
   }
 
   @Override
   @Transactional(readOnly = true)
   public List<InventoryResponse> findAll() {
-    List<InventoryResponse> inventories = inventoryMapper.findAll();
-    return inventories;
+    return inventoryMapper.findAll();
   }
 
   @Override
   public InventoryResponse findByItemCode(String itemCode) {
-    InventoryResponse inventory = inventoryMapper.findByItemCode(itemCode);
-    return inventory;
+    return inventoryMapper.findByItemCode(itemCode);
   }
 
 

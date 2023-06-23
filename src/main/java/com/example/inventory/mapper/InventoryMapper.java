@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import com.example.inventory.web.api.response.InventoryResponse;
 
 @Mapper
-public interface InventoryMapper {
+public interface InventoryTransactionMapper {
 
   @Select("SELECT i.code, i.name, COALESCE(SUM(it.quantity), 0) AS quantity " +
         "FROM items i " +

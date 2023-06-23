@@ -10,7 +10,7 @@ public class InventoryTransaction {
 
     private LocalDateTime dateTime;
 
-    private String itemCode;
+    private Item item;
 
     private Integer quantity;
 
@@ -32,20 +32,20 @@ public class InventoryTransaction {
         this.type = type;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
     public LocalDateTime getDateTime() {
         return dateTime;
     }
 
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
-    }
-
-    public String getItemCode() {
-        return itemCode;
-    }
-
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
     }
 
     public Integer getQuantity() {
@@ -70,7 +70,7 @@ public class InventoryTransaction {
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", dateTime=" + dateTime +
-                ", itemCode='" + itemCode + '\'' +
+                ", item='" + item + '\'' +
                 ", quantity=" + quantity +
                 ", description='" + description + '\'' +
                 '}';
