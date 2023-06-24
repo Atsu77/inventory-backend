@@ -28,5 +28,4 @@ public class InventoryTransactionServiceImpl implements InventoryService {
     return inventoryMapper.findByItemCode(itemCode);
   }
 
-
 }
