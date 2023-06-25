@@ -8,7 +8,7 @@ public class InventoryTransaction {
 
     private String type;
 
-    private LocalDateTime dateTime;
+    private String dateTime;
 
     private Item item;
 
@@ -40,11 +40,11 @@ public class InventoryTransaction {
         this.item = item;
     }
 
-    public LocalDateTime getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 
@@ -70,7 +70,7 @@ public class InventoryTransaction {
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", dateTime=" + dateTime +
-                ", item='" + item + '\'' +
+//                ", item='" + item + '\'' +
                 ", quantity=" + quantity +
                 ", description='" + description + '\'' +
                 '}';
